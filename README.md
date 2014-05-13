@@ -3,4 +3,11 @@ Checkers
 
 GUI Checkers game PvP
 
-asfdasdf
+Roles
+=====
+
+Nikhil - GUI/Board/Pictures
+Michael - Game Mechanics
+Jordan - Pieces
+Adam - Pieces
+Brian - Pieces
