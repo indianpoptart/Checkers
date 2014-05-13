@@ -6,14 +6,16 @@ GUI Checkers game PvP
 Roles
 =====
 
-Nikhil - GUI/Board/Pictures
-Michael - Game Mechanics
-Jordan - Pieces***Manager
+Nikhil***Team Captain
+Michael***Project Manager
+Jordan - Pieces***Assistant
 Adam - Pieces***President
-Brian - Pieces***Team Captain
+Brian - Pieces***2D array guy
 
 | Name | Role  |
 | ------------- | ----------- |
-| Nikhil     | Display the help window.|
-| Michael    | Closes a window     |
-| Jordan     | 
+| Nikhil     | Create the GUI game board|
+| Michael    | Work on game mechanics     |
+| Jordan     | Game Pieces        |
+| Adam       | Game Pieces        |
+| Brian      | Game Pieces        |
