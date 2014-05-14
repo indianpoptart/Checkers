@@ -38,7 +38,7 @@ public class Rules {
 				+ "- To move your player, press the token, then press the square you would like to move to\n"
 				+ "- An invalid turn will display a box saying that the move was invalid\n"
 				+ "To quit, press 'Q'.";
-		JOptionPane.showMessageDialog(null, rulesOfTheGame, "Checkers",JOptionPane.INFORMATION_MESSAGE, icon);
-		b.createBoard();
+		JOptionPane.showMessageDialog(null, rulesOfTheGame, "Rules",JOptionPane.INFORMATION_MESSAGE, icon);
+		b.showGrid();
 	}
 }
