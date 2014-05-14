@@ -23,6 +23,7 @@ import javax.swing.JPanel;
  * GNU General Public License for more details.
  * 
  * @author Nikhil Paranjape
+ * @author Jordan Ghidossi
  */
 import java.awt.*;
 import java.util.ArrayList;
