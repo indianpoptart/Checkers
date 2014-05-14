@@ -1,5 +1,6 @@
 package com.checkers.game;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import com.checkers.gui.Board;
@@ -27,7 +28,8 @@ import com.checkers.gui.Board;
  * This class will display the rules to the players each time the game is started, this will be a GUI
  */
 public class Rules {
-	public void Rules(){
+	final ImageIcon icon = new ImageIcon("icon.png");
+	public Rules(){
 		
 	}
 	public void getRules(){
@@ -36,6 +38,7 @@ public class Rules {
 				+ "- To move your player, press the token, then press the square you would like to move to\n"
 				+ "- An invalid turn will display a box saying that the move was invalid\n"
 				+ "To quit, press 'Q'.";
-		JOptionPane.showMessageDialog(null, rulesOfTheGame, "Checkers",JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, rulesOfTheGame, "Checkers",JOptionPane.INFORMATION_MESSAGE, icon);
+		b.createBoard();
 	}
 }

@@ -1,10 +1,5 @@
 package com.checkers.gui;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -28,7 +23,6 @@ public class Board {
 
 	public void createBoard()
 	{
-
 		frame.setSize(905,905);
 		backBoard.setSize(900,900);
 		frame.setTitle("Checkers");
