@@ -1,0 +1,81 @@
+package checkers;
+
+import java.awt.*;
+import java.util.ArrayList;
+
+import javax.swing.*;
+
+public class CheckerBoard
+{
+	private JFrame GUI = new JFrame();
+	private ArrayList<JPanel> spaces = new ArrayList<JPanel>();
+	private Container pane = GUI.getContentPane();
+	public CheckerBoard()
+	{
+		GUI.setTitle("Checkers");
+		GUI.setSize(550, 550);
+		GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		createBoard();
+	}
+	public void createBoard()
+	{
+		int row = 0;
+		for (int i = 0; i < 64; i++)
+		{
+			JPanel panel = new JPanel();
+			if (i % 2 == 0)
+			{
+				if (row % 2 == 0)
+					panel.setBackground(Color.BLACK);
+				else
+				{
+					panel.setBackground(new Color(255, 105, 0));
+					if ((row >= 0) && (row < 3))
+						panel.add((new Piece("src/whiteKingPiece.png").getComp()));
+					else if (row > 4)
+						panel.add((new Piece("src/blackKingPiece.png").getComp()));
+				}
+			}
+			else
+			{
+				if (row % 2 == 0)
+				{
+					panel.setBackground(new Color(255, 105, 0));
+					if ((row >= 0) && (row < 3))
+						panel.add((new Piece("src/whitePiece.png").getComp()));
+					else if (row > 4)
+						panel.add((new Piece("src/blackPiece.png").getComp()));
+				}
+				else
+					panel.setBackground(Color.BLACK);
+			}
+			if (i % 8 == 7)
+				row++;
+			spaces.add(panel);
+		}
+	}
+	public void showGrid()
+	{
+		pane.setLayout(new GridLayout(8, 8, 5, 5));
+		ArrayList<JPanel> list = spaces;
+		while (spaces.size() > 0)
+			pane.add(spaces.remove(0));
+		spaces = list;
+		GUI.setVisible(true);
+	}
+	public void move(Point start, Point end)
+	{
+		ArrayList<JPanel> list = spaces;
+		JPanel panel = spaces.get((int)(((start.getX() - 1) * 8) + start.getY()));
+		spaces.set((int)((end.getX() - 1) * (end.getY())), panel);
+		pane.removeAll();
+		while (spaces.size() > 0)
+			pane.add(spaces.remove(0));
+		spaces = list;
+		GUI.setVisible(true);
+	}
+	public void removeBoard()
+	{
+		GUI.setVisible(false);
+	}
+}
