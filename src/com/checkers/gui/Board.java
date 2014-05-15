@@ -73,10 +73,10 @@ public class Board
 			pane.add(spaces.remove(0));
 		GUI.setVisible(true);
 	}
-	public void move(Component piece, Location loc)
+	private void move(Component piece, Location loc)
 	{
 		pane.add(piece, ((loc.getRow() - 1) * 8) + loc.getCol());
-		piece.getLocation().getRow();
+		piece.getLocation().getX();
 	}
 	public void fillBoard()
 	{
@@ -84,7 +84,7 @@ public class Board
 		int count = 0;
 		for (int i = 0; i < 12; i++)
 		{
-			move(new Piece(new ImageIcon("src/blackPiece.png"), new Location((count / 4), space))));
+			this.move(new Piece(new ImageIcon("/res/black.png"), new Location((count / 4), space)));
 			space += 2;
 			count++;
 		}
@@ -92,7 +92,7 @@ public class Board
 		count = 5;
 		for (int j = 0; j < 12; j++)
 		{
-			move(new Piece(new ImageIcon("src/whitePiece.png"), (new Location((count / 4), space))));
+			this.move(new Piece(new ImageIcon("/res/red.png"), (new Location((count / 4), space))));
 			space += 2;
 			count++;
 		}
