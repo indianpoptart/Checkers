@@ -25,44 +25,68 @@ import javax.swing.*;
  */
 public class Piece
 {
-	private JButton piece;
-	private Location loc;
-	public Piece(ImageIcon img, Location loc)
+	private JComponent piece;
+	private BufferedImage pic;
+	public Piece(String img)
 	{
-		piece.setIcon(img);
-	    
-		this.loc = loc;
-		BufferedImage pic = new BufferedImage(0, 0, 0);;
 		try 
 		{
-			pic = ImageIO.read(new File("res/black.png"));
+			pic = ImageIO.read(new File(img));
+			pic = (BufferedImage) pic.getScaledInstance(25, 25, Image.SCALE_DEFAULT);
 		} 
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
-		JLabel label = new JLabel(new ImageIcon(pic));
+		piece = new JLabel(new ImageIcon(pic));
 	}
-	public Location getLocation()
+	public JComponent getComp()
 	{
-		return loc;
+		return piece;
 	}
-	public ArrayList<Location> getMoveLocations() 
+	public ArrayList<Point> getEmptyMoveLocations()
 	{
-		ArrayList<Location> locs = new ArrayList<Location>();
-		Location current = getLocation();
-		if (current.getRow() == 0)
+		ArrayList<Point> locs = getMoveLocations();
+		ArrayList<Point> occ = getOccupiedMoveLocations();
+		for (int i = 0; i < locs.size(); i++)
 		{
-			if (current.getCol() == 1)
+			boolean rem = false;
+			for (int j = 0; j < occ.size(); j++)
 			{
-				locs.add(current);
+				if (locs.get(i) == occ.get(j))
+				{
+					rem = true;
+				}
 			}
-			else if (current.getCol() == 7)
+			if (rem)
+			{
+				locs.remove(i);
+				i--;
+			}
+		}
+		return locs;
+	}
+	public ArrayList<Point> getOccupiedMoveLocations()
+	{
+		ArrayList<Point> locs = getMoveLocations();
+		return locs;
+	}
+	public ArrayList<Point> getMoveLocations() 
+	{
+		ArrayList<Point> locs = new ArrayList<Point>();
+		Point current = piece.getLocation();
+		if (current.getX() == 0)
+		{
+			if (current.getY() == 1)
+			{
+				//locs.add();
+			}
+			else if (current.getY() == 7)
 			{
 				
 			}
 		}
-		else if (current.getRow() == 7)
+		else if (current.getX() == 7)
 		{
 			
 		}
@@ -71,9 +95,5 @@ public class Piece
 			
 		}
 		return locs;
-	}
-	public void setLocation(Location loc)
-	{
-		this.loc = loc;
 	}
 }

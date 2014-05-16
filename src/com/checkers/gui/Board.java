@@ -28,10 +28,7 @@ import javax.swing.JPanel;
 import java.awt.*;
 import java.util.ArrayList;
 
-import com.checkers.main.Location;
 import com.checkers.main.Piece;
-
-import javax.swing.*;
 
 public class Board
 {
@@ -41,8 +38,12 @@ public class Board
 	public Board()
 	{
 		GUI.setTitle("Checkers");
-		GUI.setSize(600, 600);
+		GUI.setSize(550, 550);
 		GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		createBoard();
+	}
+	public void createBoard()
+	{
 		int row = 0;
 		for (int i = 0; i < 64; i++)
 		{
@@ -52,12 +53,24 @@ public class Board
 				if (row % 2 == 0)
 					panel.setBackground(Color.BLACK);
 				else
+				{
 					panel.setBackground(new Color(255, 105, 0));
+					if ((row >= 0) && (row < 3))
+						panel.add((new Piece("res/red-king.png").getComp()));
+					else if (row > 4)
+						panel.add((new Piece("res/black-king.png").getComp()));
+				}
 			}
 			else
 			{
 				if (row % 2 == 0)
+				{
 					panel.setBackground(new Color(255, 105, 0));
+					if ((row >= 0) && (row < 3))
+						panel.add((new Piece("res/red.png").getComp()));
+					else if (row > 4)
+						panel.add((new Piece("res/black.png").getComp()));
+				}
 				else
 					panel.setBackground(Color.BLACK);
 			}
@@ -69,32 +82,25 @@ public class Board
 	public void showGrid()
 	{
 		pane.setLayout(new GridLayout(8, 8, 5, 5));
+		ArrayList<JPanel> list = spaces;
 		while (spaces.size() > 0)
 			pane.add(spaces.remove(0));
+		spaces = list;
 		GUI.setVisible(true);
 	}
-	private void move(Component piece, Location loc)
+	public void move(Point start, Point end)
 	{
-		pane.add(piece, ((loc.getRow() - 1) * 8) + loc.getCol());
-		piece.getLocation().getX();
+		ArrayList<JPanel> list = spaces;
+		JPanel panel = spaces.get((int)(((start.getX() - 1) * 8) + start.getY()));
+		spaces.set((int)((end.getX() - 1) * (end.getY())), panel);
+		pane.removeAll();
+		while (spaces.size() > 0)
+			pane.add(spaces.remove(0));
+		spaces = list;
+		GUI.setVisible(true);
 	}
-	public void fillBoard()
+	public void removeBoard()
 	{
-		int space = 1;
-		int count = 0;
-		for (int i = 0; i < 12; i++)
-		{
-			this.move(new Piece(new ImageIcon("/res/black.png"), new Location((count / 4), space)));
-			space += 2;
-			count++;
-		}
-		space = 0;
-		count = 5;
-		for (int j = 0; j < 12; j++)
-		{
-			this.move(new Piece(new ImageIcon("/res/red.png"), (new Location((count / 4), space))));
-			space += 2;
-			count++;
-		}
+		GUI.setVisible(false);
 	}
 }
