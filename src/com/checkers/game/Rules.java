@@ -39,6 +39,5 @@ public class Rules {
 				+ "- An invalid turn will display a box saying that the move was invalid\n"
 				+ "To quit, press 'Q'.";
 		JOptionPane.showMessageDialog(null, rulesOfTheGame, "Rules",JOptionPane.INFORMATION_MESSAGE, icon);
-		b.showGrid();
 	}
 }

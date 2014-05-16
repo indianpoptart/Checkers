@@ -7,7 +7,11 @@ import java.awt.Rectangle;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+
+
 
 
 /* 
@@ -28,18 +32,19 @@ import javax.swing.JPanel;
 import java.awt.*;
 import java.util.ArrayList;
 
-import com.checkers.main.Piece;
+import com.checkers.game.Piece;
+import com.checkers.main.RunCheckers;
 
-public class Board
+public class Board extends RunCheckers
 {
-	private JFrame GUI = new JFrame();
+	//private JFrame GUI = new JFrame();
 	private ArrayList<JPanel> spaces = new ArrayList<JPanel>();
-	private Container pane = GUI.getContentPane();
+	private Container pane;// = GUI.getContentPane();
 	public Board()
 	{
-		GUI.setTitle("Checkers");
-		GUI.setSize(550, 550);
-		GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//GUI.setTitle("Checkers");
+		//GUI.setSize(550, 550);
+		//GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		createBoard();
 	}
 	public void createBoard()
@@ -56,51 +61,58 @@ public class Board
 				{
 					panel.setBackground(new Color(255, 105, 0));
 					if ((row >= 0) && (row < 3))
-						panel.add((new Piece("res/red-king.png").getComp()));
+						panel.add((new Piece("res/cardinal.png").getComp()));
 					else if (row > 4)
-						panel.add((new Piece("res/black-king.png").getComp()));
+						panel.add((new Piece("res/tiger.png").getComp()));
 				}
 			}
 			else
 			{
+				try{
 				if (row % 2 == 0)
 				{
 					panel.setBackground(new Color(255, 105, 0));
 					if ((row >= 0) && (row < 3))
-						panel.add((new Piece("res/red.png").getComp()));
+						panel.add((new Piece("res/cardinal.png").getComp()));
 					else if (row > 4)
-						panel.add((new Piece("res/black.png").getComp()));
+						panel.add((new Piece("res/tiger.png").getComp()));
 				}
 				else
 					panel.setBackground(Color.BLACK);
+				}
+				catch(Exception e){
+					JOptionPane.showMessageDialog(null, e, "Error",JOptionPane.INFORMATION_MESSAGE);
+					System.exit(0);
+				}
 			}
 			if (i % 8 == 7)
 				row++;
 			spaces.add(panel);
 		}
-	}
-	public void showGrid()
-	{
 		pane.setLayout(new GridLayout(8, 8, 5, 5));
 		ArrayList<JPanel> list = spaces;
 		while (spaces.size() > 0)
 			pane.add(spaces.remove(0));
 		spaces = list;
-		GUI.setVisible(true);
 	}
-	public void move(Point start, Point end)
+	//	public void move(Point start, Point end)
+	//	{
+	//		ArrayList<JPanel> list = spaces;
+	//		JPanel panel = spaces.get((int)((start.getX() - 1) + start.getY()));
+	//		panel.getComponent(0);
+	//		spaces.set((int)((end.getX() - 1) * (end.getY())), panel);
+	//		pane = GUI.getContentPane();
+	//		pane.setLayout(new GridLayout(8, 8, 5, 5));
+	//		while (spaces.size() > 0)
+	//			pane.add(spaces.remove(0));
+	//		spaces = list;
+	//	}
+	//	public void removeBoard()
+	//	{
+	//		GUI.setVisible(false);
+	//	}
+	public Container getPane()
 	{
-		ArrayList<JPanel> list = spaces;
-		JPanel panel = spaces.get((int)(((start.getX() - 1) * 8) + start.getY()));
-		spaces.set((int)((end.getX() - 1) * (end.getY())), panel);
-		pane.removeAll();
-		while (spaces.size() > 0)
-			pane.add(spaces.remove(0));
-		spaces = list;
-		GUI.setVisible(true);
-	}
-	public void removeBoard()
-	{
-		GUI.setVisible(false);
+		return pane;
 	}
 }

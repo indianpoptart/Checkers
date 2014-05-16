@@ -1,4 +1,4 @@
-package com.checkers.main;
+package com.checkers.game;
 
 
 import java.awt.*;
@@ -32,13 +32,14 @@ public class Piece
 		try 
 		{
 			pic = ImageIO.read(new File(img));
-			pic = (BufferedImage) pic.getScaledInstance(25, 25, Image.SCALE_DEFAULT);
+			piece = new JLabel(new ImageIcon(pic));
 		} 
-		catch (IOException e)
+		catch (Exception e)
 		{
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e, "Error",JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
 		}
-		piece = new JLabel(new ImageIcon(pic));
+		
 	}
 	public JComponent getComp()
 	{
