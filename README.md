@@ -13,4 +13,4 @@ Roles
 | Jordan - Pieces***Code Bandit/Stack Overflow guy| GUI and Game board-- Search the Internet       |
 | Adam - Pieces***President guy| Game Pieces        |
 | Brian - Pieces***2D array guy | Game Pieces        |
-| Jai from Tech Support***Guy Jordan stole the code from|Actual Coder   |
+| Gangi from Tech Support***Guy Jordan stole the code from|Actual Coder   |
