@@ -10,6 +10,6 @@ Roles
 | ------------- | ----------- |
 | Nikhil***Button guy | Create the GUI game board|
 | Michael***Hub Wizard assistant| Work on game mechanics     |
-| Jordan - Pieces***Code Bandit/Stack Overflow guy| GUI and Game board        |
+| Jordan - Pieces***Code Bandit/Stack Overflow guy| GUI and Game board-- Search the Internet       |
 | Adam - Pieces***President guy| Game Pieces        |
 | Brian - Pieces***2D array guy | Game Pieces        |
