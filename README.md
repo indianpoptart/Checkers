@@ -19,7 +19,7 @@ Roles
 
 Team Captains 
 ===============
-Jordan and Brian (Code Bandit and Really Funny 2D array guy)
+Nikhil Paranjape
 
 
 
