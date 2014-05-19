@@ -15,3 +15,8 @@ Roles
 | Brian - Pieces***2D array guy | Really funny 2D array support        |
 | Gangi from Tech Support***Guy Jordan stole the code from|Actual Coder   |
 
+
+
+Team Captain 
+===============
+Jordan and Brian (Code Bandit and Really Funny 2D array guy)
