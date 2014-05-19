@@ -12,7 +12,7 @@ Roles
 | Michael***Hub Wizard assistant| Work on game mechanics     |
 | Jordan - Pieces***Code Bandit/Stack Overflow guy| GUI and Game board-- Search the Internet/Thinks I'm really funny       |
 | Adam - Pieces***GitHub President guy| Needs to get on the Hub     |
-| Brian - Pieces***2D array guy | Really funny 2D array support        |
+| Brian - Pieces***2D array guy | Really funny 2D array support/ReadMe Expert        |
 | Gangi from Tech Support***Guy Jordan stole the code from|Actual Coder   |
 
 
