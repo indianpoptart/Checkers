@@ -17,6 +17,6 @@ Roles
 
 
 
-Team Captain 
+Team Captain's 
 ===============
 Jordan and Brian (Code Bandit and Really Funny 2D array guy)
