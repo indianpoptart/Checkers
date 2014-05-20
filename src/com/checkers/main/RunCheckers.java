@@ -18,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import com.checkers.game.Rules;
 import com.checkers.gui.Board;
 
 public class RunCheckers
@@ -28,7 +27,6 @@ public class RunCheckers
 	private static ArrayList<JComponent> spaces = new ArrayList<JComponent>();
 	private static Board board;
 	private static BufferedImage pic;
-	private static JComponent piece;
 	private static JButton b2;
 	public static void main(String[] args)
 	{

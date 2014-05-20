@@ -3,8 +3,6 @@ package com.checkers.game;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-import com.checkers.gui.Board;
-
 /* 
  * Checkers Game:
  *
@@ -33,7 +31,6 @@ public class Rules {
 		
 	}
 	public void getRules(){
-		Board b = new Board();
 		String rulesOfTheGame = "A LAN Checkers game!.\n"
 				+ "- To move your player, press the token, then press the square you would like to move to\n"
 				+ "- An invalid turn will display a box saying that the move was invalid\n"
