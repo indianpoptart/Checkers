@@ -16,10 +16,6 @@ import javax.swing.JOptionPane;
  * GNU General Public License for more details.
  * 
  * @author Nikhil Paranjape
- * @author Brian Maguire
- * @author Jordan Ghidossi
- * @author Michael Search
- * @author Adam Zukowski
  */
 
 /**
@@ -34,7 +30,7 @@ public class Rules {
 		String rulesOfTheGame = "A LAN Checkers game!.\n"
 				+ "- To move your player, press the token, then press the square you would like to move to\n"
 				+ "- An invalid turn will display a box saying that the move was invalid\n"
-				+ "To quit, press 'Q'.";
+				+ "To quit, press 'File' then press 'Quit'.";
 		JOptionPane.showMessageDialog(null, rulesOfTheGame, "Rules",JOptionPane.INFORMATION_MESSAGE, icon);
 	}
 }

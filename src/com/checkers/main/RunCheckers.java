@@ -9,8 +9,29 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import com.checkers.game.Rules;
 import com.checkers.gui.Board;
 
+
+/* 
+ * Checkers Game:
+ * 
+ * RunCheckers Class
+ *
+ * This code is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation.
+ *
+ * This code is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * @author Jordan Ghidossi
+ * @author Nikhil Paranjape
+ * @author Brian Maguire
+ * @author Michael Search
+ */
 public class RunCheckers extends MouseAdapter
 {
 	private static JFrame GUI = new JFrame();
@@ -87,7 +108,9 @@ public class RunCheckers extends MouseAdapter
 		{
 			@Override public void actionPerformed(ActionEvent event) 
 			{
-				showBoard();
+				Rules r = new Rules();
+				r.getRules();
+				
 			}
 		});
 	}
@@ -134,7 +157,7 @@ public class RunCheckers extends MouseAdapter
 			}
 			else if(i == 19)
 			{
-				panel = new JButton("Extra");
+				panel = new JButton("Rules");
 				panel.setBackground(new Color(255, 105, 0));
 				panel.setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 14));
 				b3 = (JButton)panel;
