@@ -16,10 +16,10 @@ import javax.swing.JOptionPane;
  * GNU General Public License for more details.
  * 
  * @author Nikhil Paranjape
+ * @author Brian Maguire
  * @author Jordan Ghidossi
  * @author Michael Search
  * @author Adam Zukowski
- * @author Brian Maguire
  */
 
 /**

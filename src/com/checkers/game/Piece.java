@@ -1,28 +1,11 @@
 package com.checkers.game;
 
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-/* 
- * Checkers Game:
- *
- * This code is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation.
- *
- * This code is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * @author Jordan Ghidossi
- * @author Nikhil Paranjape
- */
 public class Piece
 {
 	private JComponent piece;
@@ -32,23 +15,22 @@ public class Piece
 		try 
 		{
 			pic = ImageIO.read(new File(img));
-			piece = new JLabel(new ImageIcon(pic));
 		} 
-		catch (Exception e)
+		catch (IOException e)
 		{
-			JOptionPane.showMessageDialog(null, e, "Error",JOptionPane.INFORMATION_MESSAGE);
-			System.exit(0);
+			e.printStackTrace();
 		}
-		
+		piece = new JLabel(new ImageIcon(pic));
 	}
 	public JComponent getComp()
 	{
 		return piece;
 	}
-	public ArrayList<Point> getEmptyMoveLocations()
+	
+	public ArrayList<Integer> getEmptyMoveLocations(int current)
 	{
-		ArrayList<Point> locs = getMoveLocations();
-		ArrayList<Point> occ = getOccupiedMoveLocations();
+		ArrayList<Integer> locs = getMoveLocations(current);
+		ArrayList<Integer> occ = getOccupiedMoveLocations(current);
 		for (int i = 0; i < locs.size(); i++)
 		{
 			boolean rem = false;
@@ -67,33 +49,41 @@ public class Piece
 		}
 		return locs;
 	}
-	public ArrayList<Point> getOccupiedMoveLocations()
+	private ArrayList<Integer> getOccupiedMoveLocations(int current)
 	{
-		ArrayList<Point> locs = getMoveLocations();
+		ArrayList<Integer> locs = getMoveLocations(current);
 		return locs;
 	}
-	public ArrayList<Point> getMoveLocations() 
+	private ArrayList<Integer> getMoveLocations(int current) 
 	{
-		ArrayList<Point> locs = new ArrayList<Point>();
-		Point current = piece.getLocation();
-		if (current.getX() == 0)
+		ArrayList<Integer> locs = new ArrayList<Integer>();
+		locs.add(current - 7);
+		locs.add(current - 9);
+		locs.add(current + 7);
+		locs.add(current + 9);
+		if (current < 8)
 		{
-			if (current.getY() == 1)
-			{
-				//locs.add();
-			}
-			else if (current.getY() == 7)
-			{
-				
-			}
+			for (int i = 0; i < locs.size(); i++)
+				if ((locs.get(1) == current - 7) || (locs.get(i) == current - 9))
+					locs.remove(i);
 		}
-		else if (current.getX() == 7)
+		else if (current > 55)
 		{
-			
+			for (int j = 0; j < locs.size(); j++)
+				if ((locs.get(j) == current + 7) || (locs.get(j) == current + 9))
+					locs.remove(j);
 		}
-		else
+		if ((current == 8) || (current == 24) || (current == 40) || (current == 56))
 		{
-			
+			for (int i = 0; i < locs.size(); i++)
+				if ((locs.get(i) == current - 7) || (locs.get(i) == current + 7))
+					locs.remove(i);
+		}
+		else if ((current == 7) || (current == 23) || (current == 39) || (current == 55))
+		{
+			for (int i = 0; i < locs.size(); i++)
+				if ((locs.get(i) == current - 9) || (locs.get(i) == current + 9))
+					locs.remove(i);
 		}
 		return locs;
 	}

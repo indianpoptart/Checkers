@@ -1,4 +1,4 @@
-package checkers;
+package com.checkers.game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
