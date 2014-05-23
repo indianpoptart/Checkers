@@ -50,7 +50,9 @@ public class Board extends MouseAdapter
 
 						@Override
 						public void mousePressed(MouseEvent e) {
-							System.out.println("Clicked a space");
+							int x = e.getComponent().getHeight();
+							System.out.println("Clicked a space" + x);
+							
 						}
 
 						@Override
