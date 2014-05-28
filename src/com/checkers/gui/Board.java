@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import com.checkers.game.Piece;
+import com.checkers.gui.LabelMover.BasePane.CellPane;
 
 /* 
  * Checkers Game:
@@ -44,7 +45,6 @@ public class Board extends MouseAdapter
 			{
 				if (row % 2 == 0){
 					panel.setBackground(Color.BLACK);
-
 					panel.addMouseListener(new MouseAdapter() {
 
 
@@ -74,12 +74,17 @@ public class Board extends MouseAdapter
 						panel.add((new Piece("res/black.png").getComp()));
 
 					panel.addMouseListener(new MouseAdapter() {
-
-
+						private JPanel pan;
+						private JLabel label;
 						@Override
-						public void mousePressed(MouseEvent e) {
-							System.out.println("Clicked a piece");
-						}
+			            public void mousePressed(MouseEvent e) {
+			                Component source = e.getComponent();
+			                if (!label.getParent().equals(source)) {
+			                    ((CellPane)source).add(label);
+			                    pan.revalidate();
+			                    pan.repaint();
+			                }
+			            }
 
 						@Override
 						public void mouseReleased(MouseEvent e) {

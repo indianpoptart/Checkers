@@ -51,6 +51,7 @@ public class RunCheckers extends MouseAdapter
 			@Override public void actionPerformed(ActionEvent event)
 			{
 				showBoard();
+				
 			}
 		});
 		b2.addActionListener(new ActionListener()
