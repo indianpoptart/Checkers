@@ -29,8 +29,6 @@ import com.checkers.gui.Board;
  * 
  * @author Jordan Ghidossi
  * @author Nikhil Paranjape
- * @author Brian Maguire
- * @author Michael Search
  */
 public class RunCheckers extends MouseAdapter
 {
@@ -139,28 +137,28 @@ public class RunCheckers extends MouseAdapter
 				panel = new JPanel();
 				panel.setBackground(new Color(255, 105, 0));
 				JLabel label = new JLabel("Play Checkers!");
-				label.setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 25));
+				label.setFont(new Font("Roboto", Font.CENTER_BASELINE, 25));
 				panel.add(label); 
 			}
 			else if (i == 7)
 			{
 				panel = new JButton("One Player");
 				panel.setBackground(new Color(255, 105, 0));
-				panel.setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 14));
+				panel.setFont(new Font("Roboto", Font.CENTER_BASELINE, 14));
 				b1 = (JButton)panel;
 			}
 			else if (i == 13)
 			{
 				panel = new JButton("Two Player");
 				panel.setBackground(new Color(255, 105, 0));
-				panel.setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 14));
+				panel.setFont(new Font("Roboto", Font.CENTER_BASELINE, 14));
 				b2 = (JButton)panel;
 			}
 			else if(i == 19)
 			{
 				panel = new JButton("Rules");
 				panel.setBackground(new Color(255, 105, 0));
-				panel.setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 14));
+				panel.setFont(new Font("Roboto", Font.CENTER_BASELINE, 14));
 				b3 = (JButton)panel;
 			}
 			else if ((i == 3) || (i == 5) || (i == 9) || (i == 11) || (i == 15) || (i == 17) || (i == 21) || (i == 23) || (i == 25))

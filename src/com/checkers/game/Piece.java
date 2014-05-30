@@ -23,8 +23,6 @@ import javax.swing.*;
  * 
  * @author Jordan Ghidossi
  * @author Nikhil Paranjape
- * @author Brian Maguire
- * @author Michael Search
  */
 public class Piece
 {

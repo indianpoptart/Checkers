@@ -1,4 +1,5 @@
 package com.checkers.gui;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -25,8 +26,6 @@ import com.checkers.gui.LabelMover.BasePane.CellPane;
  * 
  * @author Jordan Ghidossi
  * @author Nikhil Paranjape
- * @author Brian Maguire
- * @author Michael Search
  */
 public class Board extends MouseAdapter
 {

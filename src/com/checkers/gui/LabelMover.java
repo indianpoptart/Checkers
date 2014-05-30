@@ -6,8 +6,11 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,7 +30,8 @@ public class LabelMover {
             public void run() {
                 try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                } catch (Exception e) {
+                	
                 }
 
                 JFrame frame = new JFrame("Test");
@@ -47,14 +51,14 @@ public class LabelMover {
         private JLabel label;
 
         public BasePane() {
-            setLayout(new GridLayout(2, 2));
+            setLayout(new GridLayout(8, 8));
             MouseHandler handler = new MouseHandler();
-            for (int index = 0; index < 4; index++) {
+            for (int index = 0; index < 64; index++) {
                 CellPane pane = new CellPane();
                 pane.addMouseListener(handler);
                 add(pane);
-            }
-            label = new JLabel(":)");
+            } 
+            label = new JLabel("|_|");
             label.setHorizontalAlignment(JLabel.CENTER);
             ((CellPane)getComponent(0)).add(label);
         }
@@ -82,7 +86,7 @@ public class LabelMover {
 
             @Override
             public Dimension getPreferredSize() {
-                return new Dimension(50, 50);
+                return new Dimension(100, 100);
             }
 
         }        
