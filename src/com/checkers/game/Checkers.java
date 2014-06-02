@@ -146,7 +146,7 @@ public class Checkers
 		GUI.setPreferredSize(new Dimension(550, 570));
 		try 
 		{
-			pic = ImageIO.read(new File("res/icon.png"));
+			pic = ImageIO.read(new File("res/tiger.png"));
 		} 
 		catch (IOException e)
 		{

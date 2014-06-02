@@ -40,7 +40,7 @@ public class Piece
 		{
 			try 
 			{
-				pic = ImageIO.read(new File("res/b.jpg"));
+				pic = ImageIO.read(new File("res/aK.jpg"));
 			} 
 			catch (IOException e)
 			{
@@ -51,7 +51,7 @@ public class Piece
 		{
 			try 
 			{
-				pic = ImageIO.read(new File("res/j.jpg"));
+				pic = ImageIO.read(new File("res/mK.jpg"));
 			} 
 			catch (IOException e)
 			{
