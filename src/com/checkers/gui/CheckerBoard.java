@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import com.checkers.game.Checkers;
 import com.checkers.game.Piece;
 
 /* 
@@ -27,8 +28,8 @@ import com.checkers.game.Piece;
 public class CheckerBoard 
 {
 	public static ArrayList<JComponent> spaces = new ArrayList<JComponent>();
-	public static int clickCount;
-	public static Point initialPoint, finalPoint;
+	public static int initialPoint, finalPoint, clickCount;
+	private boolean isPrimary = false, isOccupied = false;
 	public CheckerBoard()
 	{
 		int row = 0;
@@ -40,125 +41,49 @@ public class CheckerBoard
 			if (i % 2 == 0)
 			{
 				if (row % 2 == 0)
-					panel.setBackground(Color.BLACK);
+					panel.setBackground(Checkers.secondary);
 				else
 				{
-					panel.setBackground(new Color(255, 105, 0));
+					panel.setBackground(Checkers.primary);
 					if ((row >= 0) && (row < 3))
 						label = (JLabel)new Piece(Color.WHITE).getPiece();
 					else if (row > 4)
 						label = (JLabel)new Piece(Color.BLACK).getPiece();
-//					panel.addMouseListener(new MouseAdapter()
-//					{
-//						@Override public void mousePressed(MouseEvent me)
-//						{
-//							if (clickCount % 2 == 0)
-//							{
-//								initialPanel = (JPanel)me.getComponent();
-//								initialPoint = initialPanel.getLocation();
-//								System.out.println("Selected Point: " + initialPoint);
-//							}
-//							else
-//							{
-//								if ((initialPoint.getX() != me.getComponent().getLocation().getX()) && (initialPoint.getY() != me.getComponent().getLocation().getY()))
-//								{
-//									finalPoint = me.getComponent().getLocation();
-//									int startLoc = 0;
-//									for (int i = 0; i < 8; i++)
-//									{
-//										for (int j = 0; j < 8; j++)
-//										{
-//											if ((Checkers.points[0][i] == initialPoint.getX()) && (Checkers.points[1][j] == initialPoint.getY()))
-//											{
-//												startLoc = (j * 8) + i;
-//											}
-//										}
-//									}
-//									int endLoc = 0;
-//									for (int x = 0; x < 8; x++)
-//									{
-//										for (int y = 0; y < 8; y++)
-//										{
-//											if ((Checkers.points[0][x] == finalPoint.getX()) && (Checkers.points[1][y] == finalPoint.getY()))
-//											{
-//												endLoc = (y * 8) + x;
-//												spaces.set(endLoc, spaces.get(startLoc));
-//												JPanel panel1 = new JPanel();
-//												panel1.setBackground(new Color(255, 105, 0));
-//												spaces.set(startLoc, panel1);
-//											}
-//										}
-//									}
-//									//Checkers.showBoard();
-//								}
-//							}
-//							clickCount++;
-//						}
-//					});
+					isPrimary = true;
+					isOccupied = true;
 				}
 			}
 			else
 			{
 				if (row % 2 == 0)
 				{
-					panel.setBackground(new Color(255, 105, 0));
+					panel.setBackground(Checkers.primary);
 					if ((row >= 0) && (row < 3))
 						label = (JLabel)new Piece(Color.WHITE).getPiece();
 					else if (row > 4)
 						label = (JLabel)new Piece(Color.BLACK).getPiece();
-//					panel.addMouseListener(new MouseAdapter()
-//					{
-//						@Override public void mousePressed(MouseEvent me)
-//						{
-//							if (clickCount % 2 == 0)
-//							{
-//								initialPanel = (JPanel)me.getComponent();
-//								initialPoint = initialPanel.getLocation();
-//								System.out.println("Selected Point: " + initialPoint);
-//							}
-//							else
-//							{
-//								if ((initialPoint.getX() != me.getComponent().getLocation().getX()) && (initialPoint.getY() != me.getComponent().getLocation().getY()))
-//								{
-//									finalPoint = me.getComponent().getLocation();
-//									int startLoc = 0;
-//									for (int i = 0; i < 8; i++)
-//									{
-//										for (int j = 0; j < 8; j++)
-//										{
-//											if ((Checkers.points[0][i] == initialPoint.getX()) && (Checkers.points[1][j] == initialPoint.getY()))
-//											{
-//												startLoc = (j * 8) + i;
-//											}
-//										}
-//									}
-//									int endLoc = 0;
-//									for (int x = 0; x < 8; x++)
-//									{
-//										for (int y = 0; y < 8; y++)
-//										{
-//											if ((Checkers.points[0][x] == finalPoint.getX()) && (Checkers.points[1][y] == finalPoint.getY()))
-//											{
-//												endLoc = (y * 8) + x;
-//												spaces.set(endLoc, spaces.get(startLoc));
-//												spaces.set(startLoc, null);
-//											}
-//										}
-//									}
-//									//Checkers.showBoard();
-//								}
-//							}
-//							clickCount++;
-//						}
-//					});
+					isPrimary = true;
+					isOccupied = true;
 				}
 				else
-					panel.setBackground(Color.BLACK);
+					panel.setBackground(Checkers.secondary);
 			}
 			if (i % 8 == 7)
 				row++;
 			panel.add(label);
 			spaces.add(panel);
 		}
+	}
+	public boolean getIsOccupied(int index)
+	{
+		return isOccupied;
+	}
+	public boolean getIsPrimary()
+	{
+		return isPrimary;
+	}
+	public static void setColor(int index, Color color)
+	{
+		spaces.get(index).setBackground(color);
 	}
 }
