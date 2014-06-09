@@ -17,8 +17,10 @@ Roles
 
 Instructions
 =============
+http://www.youtube.com/watch?v=SuQY1_fCVsA&safe=active
 
 Checkers Rules:
+
 
 Contents: 
 Game Board, 12 red Checkers, 12 black Checkers
