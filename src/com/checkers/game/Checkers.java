@@ -19,8 +19,10 @@ public class Checkers
 	final private static int[][] points = {{9, 76, 143, 210, 277, 344, 411, 478}, {51, 116, 181, 246, 311, 376, 441, 506}};
 	public static void main(String[] args)
 	{
+		
 		new ImportSettings();
 		new MainMenu();
+		PlayMusic.startMusic();
 	}
 	public static JFrame getGUI()
 	{

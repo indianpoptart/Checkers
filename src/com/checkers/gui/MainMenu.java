@@ -31,7 +31,7 @@ public class MainMenu
 		Checkers.getPane().setLayout(new GridLayout(9, 3, 5, 5));
 		try 
 		{
-			Checkers.setPic(ImageIO.read(new File("src/checkersLogo.png")));
+			Checkers.setPic(ImageIO.read(new File("res/tiger.png")));
 		} 
 		catch (IOException e)
 		{
@@ -70,7 +70,7 @@ public class MainMenu
 		{
 			@Override public void actionPerformed(ActionEvent event)
 			{
-				CheckerBoard.showBoard();
+				Rules.getRules();
 			}
 		});
 		for (int i = 0; i < 27; i++)

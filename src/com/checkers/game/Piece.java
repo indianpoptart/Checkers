@@ -32,7 +32,7 @@ public class Piece extends JLabel implements SwingConstants, Accessible
 		{
 			try 
 			{
-				pic = ImageIO.read(new File("src/whitePiece.png"));
+				pic = ImageIO.read(new File("res/red.png"));
 			} 
 			catch (IOException e)
 			{
@@ -43,7 +43,7 @@ public class Piece extends JLabel implements SwingConstants, Accessible
 		{
 			try 
 			{
-				pic = ImageIO.read(new File("src/blackPiece.png"));
+				pic = ImageIO.read(new File("res/black.png"));
 			} 
 			catch (IOException e)
 			{
