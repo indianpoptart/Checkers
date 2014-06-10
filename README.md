@@ -8,7 +8,7 @@ Roles
 
 | Name | Role  |
 | ------------- | ----------- |
-| Nikhil***Button guy***Mad Indian | Does a lot of nonsense|
+| Nikhil***Button guy***Mad Indian...Anger Issues when it comes to his computer | Does a lot of nonsense|
 | Michael***Hub Wizard assistant| Needs to stop socializing with the other group   |
 | Jordan - Pieces***Code Bandit/Stack Overflow guy| Does all the work-- Search the Internet/Thinks I'm really funny       |
 | Adam - Pieces***Searches funny indian names/Online checkers enthusiast| Needs to get on the Hub     |
