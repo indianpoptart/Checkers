@@ -26,6 +26,12 @@ How to use the Rules Class
 Rules r = new Rules();
 r.getRules();
 ```
+How to play music
+=================
+```java
+new PlayMusic("src/[filename].wav").start();
+```
+
 
 Checkers Rules:
 
