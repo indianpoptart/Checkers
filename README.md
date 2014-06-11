@@ -19,6 +19,14 @@ Instructions
 =============
 http://www.youtube.com/watch?v=SuQY1_fCVsA&safe=active
 
+How to use the Rules Class
+==========================
+
+```java
+Rules r = new Rules();
+r.getRules();
+```
+
 Checkers Rules:
 
 
