@@ -22,7 +22,7 @@ public class Checkers
 		
 		new ImportSettings();
 		new MainMenu();
-		PlayMusic.startMusic();
+		new PlayMusic("src/Tada.wav").start();
 	}
 	public static JFrame getGUI()
 	{
