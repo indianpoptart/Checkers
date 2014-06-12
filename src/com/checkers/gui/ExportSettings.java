@@ -9,7 +9,7 @@ public class ExportSettings
 {
 	public ExportSettings()
 	{
-		String settings = Checkers.getPrimary().toString() +  "\n" + Checkers.getSecondary().toString() + "\n" + Checkers.getTertiary().toString();
+		String settings = Checkers.getPrimary().toString() +  "\n" + Checkers.getSecondary().toString() + "\n" + Checkers.getTertiary().toString() + "\n" + Checkers.getPicSource() + "\n" + Checkers.getIconSource();
 		BufferedWriter writer;
 		try
 		{

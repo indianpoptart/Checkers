@@ -14,15 +14,15 @@ public class Checkers
 	private static JFrame GUI = new JFrame();
 	private static Container pane = new Container();
 	private static JButton b1, b2, b3;
-	private static BufferedImage pic;
+	private static BufferedImage pic, icon;
+	private static String picSource, iconSource;
 	private static Color primary, secondary, tertiary;
 	final private static int[][] points = {{9, 76, 143, 210, 277, 344, 411, 478}, {51, 116, 181, 246, 311, 376, 441, 506}};
 	public static void main(String[] args)
 	{
-		
 		new ImportSettings();
 		new MainMenu();
-		new PlayMusic("src/Tada.wav").start();
+		new PlayMusic("src/theFinalCountdown.wav").run();
 	}
 	public static JFrame getGUI()
 	{
@@ -64,6 +64,18 @@ public class Checkers
 	{
 		return pic;
 	}
+	public static BufferedImage getIcon()
+	{
+		return icon;
+	}
+	public static String getPicSource()
+	{
+		return picSource;
+	}
+	public static String getIconSource()
+	{
+		return iconSource;
+	}
 	public static void setPrimary(Color color)
 	{
 		primary = color;
@@ -91,6 +103,18 @@ public class Checkers
 	public static void setPic(BufferedImage image)
 	{
 		pic = image;
+	}
+	public static void setIcon(BufferedImage image)
+	{
+		icon = image;
+	}
+	public static void setPicSource(String source)
+	{
+		picSource = source;
+	}
+	public static void setIconSource(String source)
+	{
+		iconSource = source;
 	}
 	public static void resetPane()
 	{

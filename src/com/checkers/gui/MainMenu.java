@@ -5,15 +5,15 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 
 import com.checkers.game.*;
 
@@ -21,7 +21,6 @@ public class MainMenu
 {
 	public MainMenu()
 	{
-		
 		Checkers.getGUI().setTitle("Checkers");
 		Checkers.getGUI().setResizable(false);
 		Checkers.getGUI().setBounds(5, 5, 540, 565);
@@ -29,14 +28,6 @@ public class MainMenu
 		while (CheckerBoard.getSpaces().size() > 0)
 			CheckerBoard.getSpaces().remove(0);
 		Checkers.getPane().setLayout(new GridLayout(9, 3, 5, 5));
-		try 
-		{
-			Checkers.setPic(ImageIO.read(new File("res/tiger.png")));
-		} 
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
 		Checkers.getGUI().setIconImage(Checkers.getPic());
 		Checkers.getGUI().setBackground(Checkers.getTertiary());
 		Checkers.getGUI().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,7 +39,7 @@ public class MainMenu
 		Checkers.getB2().setBackground(Checkers.getPrimary());
 		Checkers.getB2().setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 14));
 		Checkers.getB2().setForeground(Color.white);
-		Checkers.setB3(new JButton("Extra"));
+		Checkers.setB3(new JButton("Rules"));
 		Checkers.getB3().setBackground(Checkers.getPrimary());
 		Checkers.getB3().setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 14));
 		Checkers.getB3().setForeground(Color.white);
@@ -70,7 +61,12 @@ public class MainMenu
 		{
 			@Override public void actionPerformed(ActionEvent event)
 			{
-				Rules.getRules();
+				UIManager.put("OptionPane.background", Checkers.getTertiary());
+				UIManager.put("Panel.background", Checkers.getTertiary());
+				UIManager.put("Button.background", Checkers.getPrimary());
+				ImageIcon logo = new ImageIcon(Checkers.getIconSource());
+				UIManager.put("Button.font", new Font("Times New Roman", Font.CENTER_BASELINE, 12));
+				JOptionPane.showMessageDialog(null, "Objective: Be the last player remaining with pieces on the game board.\n\nSet Up: Each player has 12 pieces on the first three rows of primarily colored squares on the end\nof the game board.\n\nPlay: The player on the top of the screen makes the first move of the game. Players alternate turns. On\nyour turn, move yourpiece diagonally forward to a vacant square, then your turn is over. You must jump\nover the opponent�s piece if the square diagonally beyond that piece is vacant. If possible, you must double\nor triple jump on a turn. After you jump over one of your opponent�s pieces, it is removed from the game\nboard. Reach the back row of your opponent�s side of the game board with one of your pieces and it\nbecomes a king. It is an advantage to have kings because these pieces can move diagonally forward and\nbackward!\n\nWinning: If you are the first to remove all of your opponent�s pieces from the game board, you win!\nNow go play again!", "Checkers Rules", 0, logo);
 			}
 		});
 		for (int i = 0; i < 27; i++)

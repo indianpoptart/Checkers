@@ -2,12 +2,14 @@ package com.checkers.gui;
 
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
 import com.checkers.game.*;
+import javax.imageio.ImageIO;
 
 public class ImportSettings 
 {
@@ -37,6 +39,14 @@ public class ImportSettings
 			ter.useDelimiter("\\D+");
 			Checkers.setTertiary(new Color(ter.nextInt(), ter.nextInt(), ter.nextInt()));
 			ter.close();
+			Scanner pic = new Scanner(reader.readLine());
+			Checkers.setPicSource(pic.nextLine());
+			Checkers.setPic(ImageIO.read(new File(Checkers.getPicSource())));
+			pic.close();
+			Scanner icon = new Scanner(reader.readLine());
+			Checkers.setIconSource(icon.nextLine());
+			Checkers.setIcon(ImageIO.read(new File(Checkers.getIconSource())));
+			icon.close();
 		} 
 		catch (IOException e) 
 		{
