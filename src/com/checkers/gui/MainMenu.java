@@ -15,7 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
-import com.checkers.game.*;
+import com.checkers.gui.CheckerBoard;
+
+import com.checkers.game.Checkers;
 
 public class MainMenu 
 {

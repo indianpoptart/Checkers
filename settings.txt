@@ -1,0 +1,5 @@
+java.awt.Color[r=0,g=82,b=165]
+java.awt.Color[r=224,g=22,b=43]
+java.awt.Color[r=255,g=255,b=255]
+src/uncleSamLogo.png
+src/americanFlagArt.png

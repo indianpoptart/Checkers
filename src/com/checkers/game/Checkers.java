@@ -20,7 +20,12 @@ public class Checkers
 	final private static int[][] points = {{9, 76, 143, 210, 277, 344, 411, 478}, {51, 116, 181, 246, 311, 376, 441, 506}};
 	public static void main(String[] args)
 	{
+		try{
 		new ImportSettings();
+		}
+		catch(NullPointerException e){
+			System.out.println(e);
+		}
 		new MainMenu();
 		new PlayMusic("src/theFinalCountdown.wav").run();
 	}
