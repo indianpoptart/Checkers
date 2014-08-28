@@ -27,7 +27,7 @@ public class Checkers
 			System.out.println(e);
 		}
 		new MainMenu();
-		new PlayMusic("src/theFinalCountdown.wav").run();
+		new PlayMusic("src/final.wav").run();
 	}
 	public static JFrame getGUI()
 	{
